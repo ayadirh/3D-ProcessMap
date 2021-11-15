@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .links line {
+            stroke: #999;
+            stroke-opacity: 0.8;
+        }
+
+        .scene-tooltip {
+            color: #27cef0 !important;
+        }
+        .nodes circle {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+
+        /* div.graph-info-msg{color:rgb(235, 14, 14) !important;background-color:rgb(200, 219, 30) !important;} */
+
+        text {
+            font-family: sans-serif;
+            font-size: 10px;
+        }
+
+        pre {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- <script src="https://unpkg.com/3d-force-graph"></script>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/three-spritetext"></script>
+    <script src="https://unpkg.com/dat.gui"></script> -->
+    <!-- <script src="https://unpkg.com/three/examples/js/renderers/CSS2DRenderer.js"></script> -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Theme used by Bootstrap. Headers.css belongs to Bootstrap project -->
+    <link href="css/headers.css" rel="stylesheet">
+    <script data-main="app" src="lib/require.js"></script>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+        <symbol id="home" viewBox="0 0 16 16">
+            <path
+                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+        </symbol>
+        <symbol id="speedometer2" viewBox="0 0 16 16">
+            <path
+                d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+            <path fill-rule="evenodd"
+                d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
+        </symbol>
+        <symbol id="table" viewBox="0 0 16 16">
+            <path
+                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z" />
+        </symbol>
+        <symbol id="people-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+        </symbol>
+        <symbol id="grid" viewBox="0 0 16 16">
+            <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+        </symbol>
+    </svg>
+    </div>
+    <br>
+    <main>
+        <!-- Website Template is taken from Bootstrap Headers Examples -->
+        <h1 class="visually-hidden">Headers examples</h1>
+        <div class="b-example-divider"></div>
+        <header>
+            <div class="px-3 py-2 bg-dark text-white">
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <a href="#"
+                            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                            <h2>Process Mining Experiment</h2>
+                        </a>
+                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                            <li>
+                                <a href="#" class="nav-link text-secondary">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#home" />
+                                    </svg>
+                                    Home
+                                </a>
+                            </li>
+                            <li id="animateTokens">
+                                <a href="#" class="nav-link text-white">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#speedometer2" />
+                                    </svg>
+                                    Animate
+                                </a>
+                            </li>
+                            <li id="startTesting">
+                                <a href="#" class="nav-link text-white">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#table" />
+                                    </svg>
+                                    Test
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#examples" class="nav-link text-white">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#grid" />
+                                    </svg>
+                                    Examples
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    About
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="px-3 py-2 border-bottom mb-3"></div>
+        </header>
+        <div class="container-fluid pb-3">
+            <div class="row">
+                <div class="col-md-2 bg-light border rounded-3">
+                    <form class="card p-2 needs-validation" id="formVisualize">
+                        <div class="col-md-7 col-lg-8">
+                            <div class="col-12">
+                                <label for="scale" class="form-label">Scale</label>
+                                <input type="number" class="form-control" id="scale" min="1" max="10000" placeholder="10"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please enter scale as per the data.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-12">
+                                <label for="bin" class="form-label">Number of Bins</label>
+                                <input type="number" class="form-control" id="bin" min="1" max="10" placeholder="2"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please enter a bin value.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-12">
+                                <label for="eventlogs" class="form-label">Event Log</label>
+                                <!-- <input type="text" class="form-control" id="eventlogs" placeholder="case,activity,time" required> -->
+                                <!-- <textarea id="eventlogs" class="form-control" placeholder="case,activity,time"
+                                    required></textarea> -->
+                                    <input type="file" name="eventlogs" id="eventlogs" class="form-control" required>
+                                <div class="invalid-feedback">
+                                    Please enter eventlogs as per the examples.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-12">
+                                <label for="caseOfInterest" class="form-label">Case Of Interest</label>
+                                <input type="text" class="form-control" id="caseOfInterest" placeholder="caseA">
+                                <div class="invalid-feedback">
+                                    Please enter any case of interest.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-12">
+                                <label for="nodeInwardPlacement" class="form-label">Node Placement Adjustor (%)</label>
+                                <input type="number" class="form-control" id="nodeInwardPlacement" min="0" max="20" placeholder="0" required>
+                                <div class="invalid-feedback">
+                                    Please enter - It will place the node closer for better link length adjustment.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="btn-group col-12" role="group" aria-label="Choose scale for graph links">
+                                <input type="radio" class="btn-check form-control" name="linkScaleRadio" id="linear" autocomplete="off" checked>
+                                <label class="btn btn-outline-secondary form-label" for="linear">Linear Scale</label>
+                              
+                                <input type="radio" class="btn-check form-control" name="linkScaleRadio" id="logarthmic" autocomplete="off">
+                                <label class="btn btn-outline-secondary form-label" for="logarthmic">Logarthmic Scale</label>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-secondary">Visualize</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-10 bg-light border rounded-3">
+                    <div id="process-map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="b-example-divider"></div>
+    </main>
+    
+    
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-8">
+                <article class="blog-post">
+                    <br>
+                    <h2 class="blog-post-title">Data Preview</h2>
+                    <pre id="file-content">
+                    </pre>
+                </article>
+
+                </div>
+        </div>
+        <div class="b-example-divider"></div>
+    </div>
+    
+    
+    </div>
+    <div class="container" id="examples">
+        <br>
+        <div class="row g-5">
+            <div class="col-md-8">
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Examples</h2>
+                    <p class="blog-post-meta">May 19, 2021 </p>
+
+                    <p>These examples will show the what are the kind of data that needs to be input with these source
+                        code and
+                        preliminaries to do with data before posting here.</p>
+                    <hr>
+                    <p><strong><em>First the data needs to be sorted by case and timestamp. The headers have to
+                                renamed as case, activity and time.</em></strong></p>
+                    <!-- <p>This is an example blockquote in action:</p> -->
+                    <blockquote class="blockquote">
+                        <p>Example 1</p>
+                    </blockquote>
+                    <pre><code>
+case,activity,time
+1,start,2017-01-01T23:59:00
+1,A,2017-01-02T00:00:00
+1,B,2017-01-02T00:01:00
+1,C,2017-01-02T00:02:00
+1,D,2017-01-02T00:03:00
+1,E,2017-01-02T00:04:00
+1,end,2017-01-02T00:05:00
+2,start,2017-01-01T23:59:00
+2,A,2017-01-02T00:00:00
+2,E,2017-01-02T00:01:00
+2,end,2017-01-02T00:02:00
+3,start,2017-01-01T23:59:00
+3,A,2017-01-02T00:00:00
+3,B,2017-01-02T00:02:00
+3,end,2017-01-02T00:05:00
+4,start,2017-01-01T23:59:00
+4,A,2017-01-02T00:00:00
+4,B,2017-01-02T00:02:00
+4,C,2017-01-02T00:04:00
+4,D,2017-01-02T00:06:00
+4,E,2017-01-02T00:08:00
+4,end,2017-01-02T00:09:00
+                    </code></pre>
+                    <hr>
+                    <blockquote class="blockquote">
+                        <p>Example 2</p>
+                    </blockquote>
+                    <pre><code>
+case,activity,time
+1,A,2017-01-02T00:00:00
+1,B,2017-01-02T00:01:00
+1,C,2017-01-02T00:02:00
+1,D,2017-01-02T00:03:00
+1,E,2017-01-02T00:04:00
+2,A,2017-01-02T00:00:00
+2,E,2017-01-02T00:01:00
+3,A,2017-01-02T00:00:00
+3,B,2017-01-02T00:02:00
+4,A,2017-01-02T00:00:00
+4,B,2017-01-02T00:01:00
+5,A,2017-01-02T00:00:00
+5,B,2017-01-02T00:04:00
+                    </code></pre>
+                    <hr>
+                    <blockquote class="blockquote">
+                        <p>Example 3</p>
+                    </blockquote>
+                    <pre><code>
+case,activity,time
+1,A,2017-01-02T00:00:00
+1,B,2017-01-02T00:01:00
+1,C,2017-01-02T00:03:00
+1,D,2017-01-02T00:04:00
+4,A,2017-01-02T00:01:00
+4,B,2017-01-02T00:17:00
+2,A,2017-01-02T00:00:00
+2,E,2017-01-02T00:02:00
+3,A,2017-01-02T00:03:00
+3,E,2017-01-02T00:08:00
+5,A,2017-01-02T00:00:00
+5,B,2017-01-02T00:01:00
+                    </code></pre>
+                    <hr>
+                    <blockquote class="blockquote">
+                        <p>Example 4</p>
+                    </blockquote>
+                    <pre><code>
+case,activity,time
+test1,W1,2017-01-02T00:01:00
+test1,W2,2017-01-02T00:02:00
+test2,W3,2017-01-02T00:01:00
+test2,W4,2017-01-02T00:02:00
+test3,W5,2017-01-02T00:01:00
+test3,W6,2017-01-02T00:02:00
+test4,W7,2017-01-02T00:01:00
+test4,W8,2017-01-02T00:02:00
+test5,W9,2017-01-02T00:01:00
+test5,W10,2017-01-02T00:02:00
+test6,A1,2017-01-02T00:01:00
+test6,W12,2017-01-02T00:02:00
+                    </code></pre>
+                    <hr>
+                    <blockquote class="blockquote">
+                        <p>Example 5</p>
+                    </blockquote>
+                    <pre><code>
+case,activity,time
+declaration 86024,start,07/05/2017 08:37:48
+declaration 86024,Permit SUBMITTED by EMPLOYEE,07/05/2017 09:37:48
+declaration 86024,Permit APPROVED by PRE_APPROVER,07/06/2017 10:37:48
+declaration 86024,Permit FINAL_APPROVED by SUPERVISOR,07/07/2017 07:37:48
+declaration 86024,Start trip,07/08/2017 09:37:48
+declaration 86024,End trip,07/09/2017 09:37:48
+declaration 86024,Declaration SUBMITTED by EMPLOYEE,07/10/2017 09:37:48
+declaration 86024,Declaration REJECTED by PRE_APPROVER,07/11/2017 09:37:48
+declaration 86024,Declaration REJECTED by EMPLOYEE,07/12/2017 09:37:48
+declaration 86024,end,07/12/2017 11:37:48
+declaration 84168,start,07/13/2017 08:37:48
+declaration 84168,Permit SUBMITTED by EMPLOYEE,07/13/2017 09:37:48
+declaration 84168,Permit APPROVED by PRE_APPROVER,07/14/2017 09:37:48
+declaration 84168,Permit FINAL_APPROVED by SUPERVISOR,07/15/2017 09:37:48
+declaration 84168,Start trip,07/16/2017 09:37:48
+declaration 84168,End trip,07/17/2017 09:37:48
+declaration 84168,Declaration SUBMITTED by EMPLOYEE,07/18/2017 09:37:48
+declaration 84168,Declaration REJECTED by PRE_APPROVER,07/19/2017 09:37:48
+declaration 84168,Declaration REJECTED by EMPLOYEE,07/20/2017 09:37:48
+declaration 84168,end, 07/20/2017 11:37:48
+declaration 79488,start,07/21/2017 08:37:48
+declaration 79488,Permit SUBMITTED by EMPLOYEE,07/21/2017 09:37:48
+declaration 79488,Permit APPROVED by PRE_APPROVER,07/22/2017 09:37:48
+declaration 79488,Permit FINAL_APPROVED by SUPERVISOR,07/23/2017 09:37:48
+declaration 79488,Start trip,07/24/2017 09:37:48
+declaration 79488,End trip,07/25/2017 09:37:48
+declaration 79488,Declaration SUBMITTED by EMPLOYEE,07/26/2017 09:37:48
+declaration 79488,Declaration REJECTED by PRE_APPROVER,07/27/2017 09:37:48
+declaration 79488,Declaration REJECTED by EMPLOYEE,07/28/2017 09:37:48
+declaration 79488,end, 07/28/2017 11:37:48
+declaration 80456,start,07/29/2017 08:37:48
+declaration 80456,Permit SUBMITTED by EMPLOYEE,07/29/2017 09:37:48
+declaration 80456,Permit APPROVED by PRE_APPROVER,07/30/2017 09:37:48
+declaration 80456,Permit FINAL_APPROVED by SUPERVISOR,07/31/2017 09:37:48
+declaration 80456,Start trip,08/01/2017 09:37:48
+declaration 80456,End trip,08/02/2017 09:37:48
+declaration 80456,Declaration SUBMITTED by EMPLOYEE,08/03/2017 09:37:48
+declaration 80456,Declaration REJECTED by PRE_APPROVER,08/04/2017 02:37:48
+declaration 80456,Declaration REJECTED by EMPLOYEE,08/05/2017 09:37:48
+declaration 80456,end, 08/05/2017 11:37:48
+declaration 7687,start,08/06/2017 08:37:48
+declaration 7687,Start trip,08/06/2017 09:37:48
+declaration 7687,End trip,08/07/2017 09:37:48
+declaration 7687,Permit SUBMITTED by EMPLOYEE,08/08/2017 09:37:48
+declaration 7687,Permit APPROVED by ADMINISTRATION,08/09/2017 09:37:48
+declaration 7687,Permit FINAL_APPROVED by SUPERVISOR,08/10/2017 03:37:48
+declaration 7687,Declaration SUBMITTED by EMPLOYEE,08/11/2017 09:37:48
+declaration 7687,Declaration REJECTED by ADMINISTRATION,08/12/2017 09:37:48
+declaration 7687,Declaration REJECTED by EMPLOYEE,08/13/2017 09:37:48
+declaration 7687,end, 08/13/2017 11:37:48
+declaration 9208,start, 08/14/2017 08:37:48
+declaration 9208,Start trip,08/14/2017 09:37:48
+declaration 9208,End trip,08/15/2017 09:37:48
+declaration 9208,Permit SUBMITTED by EMPLOYEE,08/16/2017 09:37:48
+declaration 9208,Permit APPROVED by ADMINISTRATION,08/17/2017 04:37:48
+declaration 9208,Permit FINAL_APPROVED by SUPERVISOR,08/18/2017 07:37:48
+declaration 9208,Declaration SUBMITTED by EMPLOYEE,08/19/2017 09:37:48
+declaration 9208,Declaration REJECTED by ADMINISTRATION,08/20/2017 03:37:48
+declaration 9208,Declaration REJECTED by EMPLOYEE,08/21/2017 09:37:48
+declaration 9208,end, 08/21/2017 11:37:48
+                    </code></pre>
+                    <hr>
+                    <h3>Instructions</h3>
+                    <p>Some instructions for the inputs:</p>
+                    <dl>
+                        <dt>Scale</dt>
+                        <dd>If the time duration between activities in the event log is more, use a higher scale. e.g.
+                            scale = 1000 will mean
+                            the distance between the nodes in the <em>d3 graph</em> will represent 1000 times.</dd>
+                        <dt>Case of Interest</dt>
+                        <dd>Token colors will be different in the animation. If you want to watch activities of
+                            a particular case.</dd>
+                    </dl>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

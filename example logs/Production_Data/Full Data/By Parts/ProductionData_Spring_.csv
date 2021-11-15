@@ -1,0 +1,10 @@
+Case ID,Activity,Resource,Start Timestamp,Complete Timestamp,Span,Work Order  Qty,Part Desc.,Worker ID,Report Type,Qty Completed,Qty Rejected,Qty for MRB,Rework
+Case 133,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-28T00:00:00Z,2012-03-28T01:15:00Z,000:00,72,Spring,ID4429,S,0,0,0,
+Case 133,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-28T20:04:00Z,2012-03-29T04:43:00Z,008:39,72,Spring,ID4932,S,1,0,0,
+Case 133,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-29T04:44:00Z,2012-03-29T06:40:00Z,001:56,72,Spring,ID4932,D,14,0,0,
+Case 133,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-29T06:45:00Z,2012-03-29T16:03:00Z,009:18,72,Spring,ID4167,D,57,0,0,
+Case 134,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-29T17:49:00Z,2012-03-29T19:49:00Z,002:00,72,Spring,ID4932,S,0,0,0,
+Case 134,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-29T19:50:00Z,2012-03-30T00:00:00Z,004:10,72,Spring,ID4932,S,1,0,0,
+Case 134,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-30T05:45:00Z,2012-03-30T11:25:00Z,005:40,72,Spring,ID4167,D,32,0,0,
+Case 134,Turning & Milling - Machine 4,Machine 4 - Turning & Milling,2012-03-30T23:43:00Z,2012-03-31T05:45:00Z,006:02,72,Spring,ID4932,D,38,0,0,
+Case 222,Packing,Packing,2012-01-04T00:00:00Z,2012-01-04T01:00:00Z,000:00,100,Spring,ID4820,D,0,0,0,

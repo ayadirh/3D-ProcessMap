@@ -1,0 +1,15 @@
+Case ID,Activity,Resource,Start Timestamp,Complete Timestamp,Span,Work Order  Qty,Part Desc.,Worker ID,Report Type,Qty Completed,Qty Rejected,Qty for MRB,Rework
+Case 206,Turning & Milling Q.C.,Quality Check 1,2012-01-08T15:02:00Z,2012-01-08T15:07:00Z,000:05,21,Cutting Wheel,ID4618,D,0,0,0,
+Case 206,Laser Marking - Machine 7,Machine 7- Laser Marking,2012-01-09T09:44:00Z,2012-01-09T09:55:00Z,000:11,21,Cutting Wheel,ID0998,D,21,0,0,
+Case 206,Lapping - Machine 1,Machine 1 - Lapping,2012-01-09T09:56:00Z,2012-01-09T10:45:00Z,000:49,21,Cutting Wheel,ID0998,D,21,0,0,
+Case 206,Round Grinding - Manual,Machine 27 - Grinding,2012-01-19T06:58:00Z,2012-01-19T08:32:00Z,001:34,21,Cutting Wheel,ID4872,S,0,0,0,
+Case 206,Round Grinding - Manual,Machine 27 - Grinding,2012-01-19T08:32:00Z,2012-01-19T15:48:00Z,007:16,21,Cutting Wheel,ID4872,D,10,0,0,
+Case 206,Final Inspection Q.C.,Quality Check 1,2012-01-20T07:54:00Z,2012-01-20T12:50:00Z,004:56,21,Cutting Wheel,ID4618,D,0,0,0,
+Case 206,Final Inspection Q.C.,Quality Check 1,2012-01-22T06:55:00Z,2012-01-22T08:10:00Z,000:00,21,Cutting Wheel,ID4618,D,10,0,0,
+Case 206,Packing,Packing,2012-01-23T00:00:00Z,2012-01-23T01:00:00Z,000:00,21,Cutting Wheel,ID4291,D,10,0,0,
+Case 206,Round Grinding - Machine 12,Machine 12 - Grinding,2012-01-25T15:00:00Z,2012-01-25T16:00:00Z,001:00,21,Cutting Wheel,ID4528,S,0,0,0,
+Case 206,Round Grinding - Machine 12,Machine 12 - Grinding,2012-01-25T16:00:00Z,2012-01-25T17:45:00Z,001:45,21,Cutting Wheel,ID4528,D,5,0,0,
+Case 206,Round Grinding - Machine 12,Machine 12 - Grinding,2012-01-26T06:50:00Z,2012-01-26T08:30:00Z,001:40,21,Cutting Wheel,ID4528,D,6,0,0,
+Case 206,Final Inspection Q.C.,Quality Check 1,2012-02-02T10:18:00Z,2012-02-02T12:17:00Z,001:59,21,Cutting Wheel,ID4618,D,0,1,0,
+Case 206,Final Inspection Q.C.,Quality Check 1,2012-02-02T13:28:00Z,2012-02-02T14:43:00Z,000:00,21,Cutting Wheel,ID4618,D,10,0,0,Y
+Case 206,Packing,Packing,2012-02-03T00:00:00Z,2012-02-03T01:00:00Z,000:00,21,Cutting Wheel,ID4820,D,10,0,0,

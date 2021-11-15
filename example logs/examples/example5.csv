@@ -1,0 +1,61 @@
+case,activity,time
+declaration 86024,start,07/05/2017 08:37:48
+declaration 86024,Permit SUBMITTED by EMPLOYEE,07/05/2017 09:37:48
+declaration 86024,Permit APPROVED by PRE_APPROVER,07/06/2017 10:37:48
+declaration 86024,Permit FINAL_APPROVED by SUPERVISOR,07/07/2017 07:37:48
+declaration 86024,Start trip,07/08/2017 09:37:48
+declaration 86024,End trip,07/09/2017 09:37:48
+declaration 86024,Declaration SUBMITTED by EMPLOYEE,07/10/2017 09:37:48
+declaration 86024,Declaration REJECTED by PRE_APPROVER,07/11/2017 09:37:48
+declaration 86024,Declaration REJECTED by EMPLOYEE,07/12/2017 09:37:48
+declaration 86024,end,07/12/2017 11:37:48
+declaration 84168,start,07/13/2017 08:37:48
+declaration 84168,Permit SUBMITTED by EMPLOYEE,07/13/2017 09:37:48
+declaration 84168,Permit APPROVED by PRE_APPROVER,07/14/2017 09:37:48
+declaration 84168,Permit FINAL_APPROVED by SUPERVISOR,07/15/2017 09:37:48
+declaration 84168,Start trip,07/16/2017 09:37:48
+declaration 84168,End trip,07/17/2017 09:37:48
+declaration 84168,Declaration SUBMITTED by EMPLOYEE,07/18/2017 09:37:48
+declaration 84168,Declaration REJECTED by PRE_APPROVER,07/19/2017 09:37:48
+declaration 84168,Declaration REJECTED by EMPLOYEE,07/20/2017 09:37:48
+declaration 84168,end, 07/20/2017 11:37:48
+declaration 79488,start,07/21/2017 08:37:48
+declaration 79488,Permit SUBMITTED by EMPLOYEE,07/21/2017 09:37:48
+declaration 79488,Permit APPROVED by PRE_APPROVER,07/22/2017 09:37:48
+declaration 79488,Permit FINAL_APPROVED by SUPERVISOR,07/23/2017 09:37:48
+declaration 79488,Start trip,07/24/2017 09:37:48
+declaration 79488,End trip,07/25/2017 09:37:48
+declaration 79488,Declaration SUBMITTED by EMPLOYEE,07/26/2017 09:37:48
+declaration 79488,Declaration REJECTED by PRE_APPROVER,07/27/2017 09:37:48
+declaration 79488,Declaration REJECTED by EMPLOYEE,07/28/2017 09:37:48
+declaration 79488,end,07/28/2017 11:37:48
+declaration 80456,start,07/29/2017 08:37:48
+declaration 80456,Permit SUBMITTED by EMPLOYEE,07/29/2017 09:37:48
+declaration 80456,Permit APPROVED by PRE_APPROVER,07/30/2017 09:37:48
+declaration 80456,Permit FINAL_APPROVED by SUPERVISOR,07/31/2017 09:37:48
+declaration 80456,Start trip,08/01/2017 09:37:48
+declaration 80456,End trip,08/02/2017 09:37:48
+declaration 80456,Declaration SUBMITTED by EMPLOYEE,08/03/2017 09:37:48
+declaration 80456,Declaration REJECTED by PRE_APPROVER,08/04/2017 02:37:48
+declaration 80456,Declaration REJECTED by EMPLOYEE,08/05/2017 09:37:48
+declaration 80456,end,08/05/2017 11:37:48
+declaration 7687,start,08/06/2017 08:37:48
+declaration 7687,Start trip,08/06/2017 09:37:48
+declaration 7687,End trip,08/07/2017 09:37:48
+declaration 7687,Permit SUBMITTED by EMPLOYEE,08/08/2017 09:37:48
+declaration 7687,Permit APPROVED by ADMINISTRATION,08/09/2017 09:37:48
+declaration 7687,Permit FINAL_APPROVED by SUPERVISOR,08/10/2017 03:37:48
+declaration 7687,Declaration SUBMITTED by EMPLOYEE,08/11/2017 09:37:48
+declaration 7687,Declaration REJECTED by ADMINISTRATION,08/12/2017 09:37:48
+declaration 7687,Declaration REJECTED by EMPLOYEE,08/13/2017 09:37:48
+declaration 7687,end,08/13/2017 11:37:48
+declaration 9208,start,08/14/2017 08:37:48
+declaration 9208,Start trip,08/14/2017 09:37:48
+declaration 9208,End trip,08/15/2017 09:37:48
+declaration 9208,Permit SUBMITTED by EMPLOYEE,08/16/2017 09:37:48
+declaration 9208,Permit APPROVED by ADMINISTRATION,08/17/2017 04:37:48
+declaration 9208,Permit FINAL_APPROVED by SUPERVISOR,08/18/2017 07:37:48
+declaration 9208,Declaration SUBMITTED by EMPLOYEE,08/19/2017 09:37:48
+declaration 9208,Declaration REJECTED by ADMINISTRATION,08/20/2017 03:37:48
+declaration 9208,Declaration REJECTED by EMPLOYEE,08/21/2017 09:37:48
+declaration 9208,end,08/21/2017 11:37:48

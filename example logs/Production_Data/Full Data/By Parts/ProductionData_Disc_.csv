@@ -1,0 +1,11 @@
+Case ID,Activity,Resource,Start Timestamp,Complete Timestamp,Span,Work Order  Qty,Part Desc.,Worker ID,Report Type,Qty Completed,Qty Rejected,Qty for MRB,Rework
+Case 246,Turning & Milling - Machine 9,Machine 9 - Turning & Milling,2012-01-02T09:00:00Z,2012-01-02T16:00:00Z,007:00,36,Disc,ID4641,D,10,0,0,
+Case 246,Turning & Milling - Machine 9,Machine 9 - Turning & Milling,2012-01-02T16:00:00Z,2012-01-02T23:40:00Z,007:40,36,Disc,ID3846,D,7,0,0,
+Case 246,Turning & Milling - Machine 9,Machine 9 - Turning & Milling,2012-01-03T14:14:00Z,2012-01-03T15:29:00Z,000:00,36,Disc,ID4641,D,14,0,0,
+Case 246,Turning & Milling Q.C.,Quality Check 1,2012-01-04T07:00:00Z,2012-01-04T08:40:00Z,001:40,36,Disc,ID4287,D,31,2,0,
+Case 246,Laser Marking - Machine 7,Machine 7- Laser Marking,2012-01-04T09:39:00Z,2012-01-04T10:21:00Z,000:42,36,Disc,ID4882,D,31,0,0,
+Case 246,Flat Grinding - Machine 11,Machine 11 - Grinding,2012-01-04T10:59:00Z,2012-01-04T17:54:00Z,006:55,36,Disc,ID0998,D,15,0,0,
+Case 246,Flat Grinding - Machine 11,Machine 11 - Grinding,2012-01-05T00:00:00Z,2012-01-05T01:15:00Z,000:00,36,Disc,ID4882,D,0,0,0,
+Case 246,Flat Grinding - Machine 11,Machine 11 - Grinding,2012-01-05T08:16:00Z,2012-01-05T10:35:00Z,002:19,36,Disc,ID0998,D,16,0,0,
+Case 246,Final Inspection Q.C.,Quality Check 1,2012-01-08T14:04:00Z,2012-01-08T15:27:00Z,001:23,36,Disc,ID4287,D,31,0,0,
+Case 246,Packing,Packing,2012-01-09T00:00:00Z,2012-01-09T01:00:00Z,000:00,36,Disc,ID4491,D,31,0,0,

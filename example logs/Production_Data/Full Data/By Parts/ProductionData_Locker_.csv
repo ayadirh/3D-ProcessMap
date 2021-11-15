@@ -1,0 +1,11 @@
+Case ID,Activity,Resource,Start Timestamp,Complete Timestamp,Span,Work Order  Qty,Part Desc.,Worker ID,Report Type,Qty Completed,Qty Rejected,Qty for MRB,Rework
+Case 129,Turning & Milling - Machine 8,Machine 8 - Turning & Milling,2012-03-06T10:18:00Z,2012-03-06T18:21:00Z,008:03,3,Locker,ID4219,S,0,0,0,
+Case 129,Turning & Milling Q.C.,Quality Check 1,2012-03-06T15:50:00Z,2012-03-06T17:50:00Z,002:00,3,Locker,ID4287,S,0,0,0,
+Case 129,Turning & Milling - Machine 8,Machine 8 - Turning & Milling,2012-03-07T14:42:00Z,2012-03-07T18:59:00Z,004:17,3,Locker,ID4219,S,1,0,0,
+Case 129,Turning & Milling - Machine 8,Machine 8 - Turning & Milling,2012-03-07T20:19:00Z,2012-03-07T22:06:00Z,001:47,3,Locker,ID0997,D,2,0,0,
+Case 129,Turning & Milling Q.C.,Quality Check 1,2012-03-08T07:00:00Z,2012-03-08T08:40:00Z,001:40,3,Locker,ID4287,D,3,0,0,
+Case 129,Lapping - Machine 1,Machine 1 - Lapping,2012-03-09T10:44:00Z,2012-03-09T11:59:00Z,000:00,3,Locker,ID0998,D,3,0,0,
+Case 129,Lapping - Machine 1,Quality Check 1,2012-03-09T12:00:00Z,2012-03-09T12:15:00Z,000:15,3,Locker,ID4287,D,3,0,0,
+Case 129,Packing,Packing,2012-03-19T00:00:00Z,2012-03-19T01:00:00Z,000:00,3,Locker,ID4820,D,3,0,0,
+Case 129,Final Inspection Q.C.,Quality Check 1,2012-03-19T16:00:00Z,2012-03-19T16:30:00Z,000:30,3,Locker,ID4287,D,0,0,0,
+Case 129,Laser Marking - Machine 7,Machine 7- Laser Marking,2012-03-20T08:27:00Z,2012-03-20T09:11:00Z,000:44,3,Locker,ID0998,D,3,0,0,

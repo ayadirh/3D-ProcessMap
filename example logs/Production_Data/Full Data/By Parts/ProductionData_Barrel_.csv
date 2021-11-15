@@ -1,0 +1,15 @@
+Case ID,Activity,Resource,Start Timestamp,Complete Timestamp,Span,Work Order  Qty,Part Desc.,Worker ID,Report Type,Qty Completed,Qty Rejected,Qty for MRB,Rework
+Case 250,Milling - Machine 16,Machine 16 - Milling,2012-01-03T07:30:00Z,2012-01-03T16:00:00Z,008:30,32,Barrel,ID4326,S,0,0,0,
+Case 250,Milling - Machine 16,Machine 16 - Milling,2012-01-04T14:00:00Z,2012-01-04T18:00:00Z,004:00,32,Barrel,ID4326,S,0,0,0,
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-05T07:00:00Z,2012-01-05T12:50:00Z,005:50,32,Barrel,ID4163,D,0,0,0,
+Case 250,Milling - Machine 16,Machine 16 - Milling,2012-01-05T07:00:00Z,2012-01-05T16:00:00Z,009:00,32,Barrel,ID4326,D,8,0,0,
+Case 250,Milling - Machine 16,Machine 16 - Milling,2012-01-06T07:00:00Z,2012-01-06T13:00:00Z,006:00,32,Barrel,ID4326,D,7,0,0,
+Case 250,Milling - Machine 16,Machine 16 - Milling,2012-01-08T06:49:00Z,2012-01-08T17:59:00Z,011:10,32,Barrel,ID4326,D,17,0,0,
+Case 250,Laser Marking - Machine 7,Machine 7- Laser Marking,2012-01-09T14:32:00Z,2012-01-09T15:47:00Z,000:00,32,Barrel,ID0998,D,32,0,0,
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-10T07:00:00Z,2012-01-10T08:40:00Z,001:40,32,Barrel,ID4163,D,0,0,0,
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-10T07:00:00Z,2012-01-10T08:40:00Z,001:40,32,Barrel,ID4163,D,0,0,0,
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-10T08:21:00Z,2012-01-10T08:40:00Z,000:19,32,Barrel,ID4163,D,32,0,0,
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-10T09:00:00Z,2012-01-10T12:50:00Z,003:50,32,Barrel,ID4163,D,0,0,0,Y
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-10T13:20:00Z,2012-01-10T14:50:00Z,001:30,32,Barrel,ID4163,D,0,0,0,
+Case 250,Final Inspection Q.C.,Quality Check 1,2012-01-10T15:00:00Z,2012-01-10T18:00:00Z,003:00,32,Barrel,ID4163,D,0,0,0,
+Case 250,Packing,Packing,2012-01-12T00:00:00Z,2012-01-12T01:00:00Z,000:00,32,Barrel,ID4820,D,32,0,0,
